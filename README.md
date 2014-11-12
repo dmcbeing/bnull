@@ -41,8 +41,8 @@ As is customary we will begin with the simplest possible kernel module that simp
 
 Unlike user applications kernel modules do not have the standard file input/output streams (stdin,stdout,stderr).
 The Linux kernel provides the kernel log,this log can be viewed with the _dmesg_ program.
-Similar to the userspace _pritnf_[printf] function Linux provides us with the _printk_[printk] function.
-Just like _printf_[lala] _printk_ has the format:
+Similar to the userspace _pritnf_ function Linux provides us with the <a href="http://www.makelinux.net/ldd3/chp-4-sect-2.shtml">_printk_</a> function.
+Just like <a href="http://www.cplusplus.com/reference/cstdio/printf/">_printk_</a> <a href="http://www.makelinux.net/ldd3/chp-4-sect-2.shtml">_printk_</a> has the format:
 
 printk(format_string,...)
 
@@ -54,7 +54,7 @@ Most character specifiers are supported:
 - sub-specifiers such as width.
 
 Floating point specifiers (such as "%f") are not supported, as the Linux kernel does not allow floating point operations in the first place.
-The reason for this seems to be portability,performance and overall code simplicity (see [here]).
+The reason for this seems to be portability,performance and overall code simplicity (see <a href="http://stackoverflow.com/questions/13886338/use-of-floating-point-in-the-linux-kernel">[here]</a>).
 
 #### The Code:
 
@@ -80,4 +80,4 @@ module_init( bnull_init );
 module_exit( bnull_exit );
 ````
 
-The function _bnull_init_ as the name suggests is the initializing function of our module(similar to a Java/C++ constructor function for a class). Since every module(and programmer) follows different naming conventions we explicitly state the name of the init function with the _module_init_ function. Similarly the _module_exit_ function allows the programmer to specify the exit function (destructor function in object oriented lingo)
+The function _bnull_init_ as the name suggests is the initializing function of our module(similar to a Java/C++ constructor function for a class). Since every module(and programmer) follows different naming conventions we explicitly state the name of the init function with the _module_init_ function. Similarly the _module_exit_ function allows the programmer to specify the exit function (destructor function in object oriented lingo).
